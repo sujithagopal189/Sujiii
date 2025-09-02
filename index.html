@@ -4,7 +4,49 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sujitha | Resume & Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    /* General Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body { line-height: 1.6; background: #f8f9fa; color: #333; }
+
+    /* Header */
+    header { background: #4e54c8; color: #fff; padding: 1rem 2rem; position: sticky; top: 0; z-index: 1000; }
+    nav { display: flex; justify-content: space-between; align-items: center; max-width: 1100px; margin: auto; }
+    nav ul { list-style: none; display: flex; }
+    nav ul li { margin-left: 20px; }
+    nav ul li a { color: #fff; text-decoration: none; font-weight: bold; }
+
+    /* Hero */
+    .hero { text-align: center; padding: 100px 20px; background: linear-gradient(135deg, #4e54c8, #8f94fb); color: #fff; }
+    .hero h2 span { color: yellow; }
+    .btn { display: inline-block; margin-top: 15px; padding: 10px 20px; background: #ff4081; color: #fff; border-radius: 5px; text-decoration: none; }
+
+    /* Sections */
+    section { padding: 60px 20px; max-width: 1000px; margin: auto; text-align: center; }
+    h2 { margin-bottom: 20px; }
+
+    /* About */
+    #about p { max-width: 700px; margin: auto; text-align: center; line-height: 1.8; }
+
+    /* Skills */
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 15px; }
+    .skill { background: #8f94fb; padding: 15px; text-align: center; color: #fff; border-radius: 8px; font-weight: 500; }
+
+    /* Projects */
+    .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .project-card { background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: 0.3s; text-align: center; }
+    .project-card:hover { transform: scale(1.05); }
+
+    /* Contact */
+    #contact p { margin: 10px 0; font-size: 1rem; }
+    #contact a { color: #4e54c8; text-decoration: none; font-weight: bold; }
+
+    /* Footer */
+    footer { text-align: center; padding: 20px; background: #4e54c8; color: #fff; margin-top: 20px; }
+
+    /* Active link highlight */
+    nav a.active { border-bottom: 2px solid yellow; }
+  </style>
 </head>
 <body>
   <!-- Header -->
@@ -31,8 +73,8 @@
   <section id="about">
     <h2>About Me</h2>
     <p>
-      I am currently pursuing B.Sc. Computer Science with Data Analytics.  
-      Passionate about Data Visualization, Web Development, and AI-powered projects.  
+      I am currently pursuing B.Sc. Computer Science with Data Analytics.<br>
+      Passionate about Data Visualization, Web Development, and AI-powered projects.<br>
       I enjoy combining creativity with analytics to solve real-world problems.
     </p>
   </section>
@@ -82,70 +124,36 @@
     <p>© 2025 Sujitha | Personal Branding Website</p>
   </footer>
 
-  <script src="script.js"></script>
-</body>
-</html>/* General Reset */
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-body { line-height: 1.6; background: #f8f9fa; color: #333; }
-
-/* Header */
-header { background: #4e54c8; color: #fff; padding: 1rem 2rem; position: sticky; top: 0; }
-nav { display: flex; justify-content: space-between; align-items: center; }
-nav ul { list-style: none; display: flex; }
-nav ul li { margin-left: 20px; }
-nav ul li a { color: #fff; text-decoration: none; font-weight: bold; }
-
-/* Hero */
-.hero { text-align: center; padding: 100px 20px; background: linear-gradient(135deg, #4e54c8, #8f94fb); color: #fff; }
-.hero h2 span { color: yellow; }
-.btn { display: inline-block; margin-top: 15px; padding: 10px 20px; background: #ff4081; color: #fff; border-radius: 5px; text-decoration: none; }
-
-/* Sections */
-section { padding: 60px 20px; max-width: 1000px; margin: auto; }
-h2 { text-align: center; margin-bottom: 20px; }
-
-/* Skills */
-.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 15px; }
-.skill { background: #8f94fb; padding: 15px; text-align: center; color: #fff; border-radius: 8px; }
-
-/* Projects */
-.projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-.project-card { background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: 0.3s; }
-.project-card:hover { transform: scale(1.05); }
-
-/* Contact */
-#contact p { text-align: center; margin: 10px 0; }
-
-/* Footer */
-footer { text-align: center; padding: 20px; background: #4e54c8; color: #fff; margin-top: 20px; }
-
-/* Active link highlight */
-nav a.active { border-bottom: 2px solid yellow; }
-// Smooth Scroll for nav links
-document.querySelectorAll("nav a").forEach(anchor => {
-  anchor.addEventListener("click", function(e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute("href")).scrollIntoView({
-      behavior: "smooth"
-    });
-  });
-});
-
-// Highlight active section
-window.addEventListener("scroll", () => {
-  let sections = document.querySelectorAll("section");
-  let scrollY = window.scrollY;
-
-  sections.forEach(sec => {
-    let offset = sec.offsetTop - 150;
-    let height = sec.offsetHeight;
-    let id = sec.getAttribute("id");
-
-    if (scrollY >= offset && scrollY < offset + height) {
-      document.querySelectorAll("nav a").forEach(link => {
-        link.classList.remove("active");
+  <!-- JavaScript -->
+  <script>
+    // Smooth Scroll for nav links
+    document.querySelectorAll("nav a").forEach(anchor => {
+      anchor.addEventListener("click", function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+          behavior: "smooth"
+        });
       });
-      document.querySelector(`nav a[href*=${id}]`).classList.add("active");
-    }
-  });
-});
+    });
+
+    // Highlight active section
+    window.addEventListener("scroll", () => {
+      let sections = document.querySelectorAll("section");
+      let scrollY = window.scrollY;
+
+      sections.forEach(sec => {
+        let offset = sec.offsetTop - 150;
+        let height = sec.offsetHeight;
+        let id = sec.getAttribute("id");
+
+        if (scrollY >= offset && scrollY < offset + height) {
+          document.querySelectorAll("nav a").forEach(link => {
+            link.classList.remove("active");
+          });
+          document.querySelector(`nav a[href*=${id}]`).classList.add("active");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
